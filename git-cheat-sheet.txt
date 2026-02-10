@@ -1,0 +1,5 @@
+init: start a new Git repo in this folder
+log: show commit history
+show: show details of a commit (or HEAD)
+checkout: switch branches / restore files / checkout commits
+reset: move HEAD/branch pointer; can unstage files
