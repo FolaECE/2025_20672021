@@ -1,0 +1,4 @@
+C:/2025_20672021/Worksheet_4/Calc/build/CMakeFiles/maths.dir
+C:/2025_20672021/Worksheet_4/Calc/build/CMakeFiles/calc.dir
+C:/2025_20672021/Worksheet_4/Calc/build/CMakeFiles/ALL_BUILD.dir
+C:/2025_20672021/Worksheet_4/Calc/build/CMakeFiles/ZERO_CHECK.dir

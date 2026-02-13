@@ -1,0 +1,10 @@
+^C:\2025_20672021\WORKSHEET_4\HELLO_CMAKE\BUILD\CMAKEFILES\A2294D995AB6037D91C043A1C3E2960D\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/2025_20672021/Worksheet_4/hello_cmake -BC:/2025_20672021/Worksheet_4/hello_cmake/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/2025_20672021/Worksheet_4/hello_cmake/build/hello.sln
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
