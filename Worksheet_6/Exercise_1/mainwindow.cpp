@@ -6,7 +6,9 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    connect(ui->pushButton, &QPushButton::released, this, &MainWindow::handleButton);
+    connect(ui->pushButton, &QPushButton::released,  this,  &MainWindow::handleButton);
+    connect(this, &MainWindow::statusUpdateMessage,
+        ui->statusbar, &QStatusBar::showMessage);
 }
 
 MainWindow::~MainWindow()
@@ -14,7 +16,5 @@ MainWindow::~MainWindow()
     delete ui;
 }
 void MainWindow :: handleButton() {
-    QMessageBox msgBox;
-    msgBox.setText("Add button was clicked");
-    msgBox.exec();
+     emit statusUpdateMessage(QString ("Add button was clicked"), 0);
 }

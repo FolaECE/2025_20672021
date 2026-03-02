@@ -16,6 +16,8 @@ class MainWindow : public QMainWindow
 public slots:
     void handleButton();
 
+signals:
+    void statusUpdateMessage(const QString & message, int timeout);
 
 public:
     MainWindow(QWidget *parent = nullptr);
