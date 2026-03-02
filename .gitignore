@@ -1,1 +1,28 @@
-Worksheet_5/html/
+# Build folders
+build/
+*/build/
+
+# Visual Studio / Qt Creator
+.vs/
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+
+# VS projects
+*.sln
+*.vcxproj*
+*.VC.db
+*.VC.opendb
+
+# Binaries / intermediates
+*.exe
+*.dll
+*.obj
+*.pdb
+*.ilk
+*.lib
+*.exp
+
+# Logs
+*.log
