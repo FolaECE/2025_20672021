@@ -7,7 +7,7 @@ MainWindow::MainWindow(QWidget *parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    
+    connect(ui->pushButton, &QPushButton::released, this, &MainWindow::handleButton);
 }
 
 void MainWindow::handleButton() {
@@ -18,6 +18,6 @@ void MainWindow::handleButton() {
 
 MainWindow::~MainWindow()
 {
-    connect(ui->pushButton, &QPushButton::released, this, &MainWindow::handleButton);
+    
     delete ui;
 }
