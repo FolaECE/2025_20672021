@@ -27,6 +27,6 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
-    ModelPartList* partList;
+    ModelPartList* partList; 
 };
 #endif // MAINWINDOW_H
