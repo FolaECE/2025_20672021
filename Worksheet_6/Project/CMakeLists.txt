@@ -16,6 +16,7 @@ qt_add_executable(Project
     ModelPart.h
     ModelPartList.cpp
     ModelPartList.h
+    Icons.qrc
 )
 
 target_link_libraries(Project
