@@ -2,6 +2,8 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "ModelPart.h"
+#include "ModelPartList.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -25,5 +27,6 @@ public slots:
 
 private:
     Ui::MainWindow *ui;
+    ModelPartList* partList;
 };
 #endif // MAINWINDOW_H
