@@ -30,6 +30,9 @@ public slots:
 
 
 
+private slots:
+    void on_actionOpen_File_triggered();
+
 private:
     Ui::MainWindow *ui;
     ModelPartList* partList; 
