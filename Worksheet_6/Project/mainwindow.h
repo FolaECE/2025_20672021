@@ -25,6 +25,11 @@ public:
 public slots:
     void handleButton();
 
+public slots:
+    void handleTreeClicked();
+
+
+
 private:
     Ui::MainWindow *ui;
     ModelPartList* partList; 

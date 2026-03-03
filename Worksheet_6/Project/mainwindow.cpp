@@ -12,6 +12,9 @@ MainWindow::MainWindow(QWidget *parent)
         this,
         &MainWindow::handleButton); 
 
+    connect(ui->treeView, &QTreeView::clicked,
+        this, &MainWindow::handleTreeClicked);
+
     connect( this, &MainWindow::statusUpdateMessage, ui->statusbar, &QStatusBar::showMessage );
 
     partList = new ModelPartList("PartsList", this);
@@ -42,6 +45,18 @@ MainWindow::MainWindow(QWidget *parent)
             childItem->appendChild(childChildItem);
         }
     }
+}
+
+void MainWindow::handleTreeClicked()
+{
+    QModelIndex index = ui->treeView->currentIndex();
+
+    ModelPart* selectedPart =
+        static_cast<ModelPart*>(index.internalPointer());
+
+    QString text = selectedPart->data(0).toString();
+
+    emit statusUpdateMessage("The selected item is: " + text, 0);
 }
 
 void MainWindow::handleButton() {
