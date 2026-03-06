@@ -1,12 +1,23 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include <QMessageBox>
+#include <QFile>
+#include <QIcon>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
     , ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+
+    ui->actionOpen_File->setIcon(QIcon(":/icons/fileopen.png"));
+
+    ui->statusbar->showMessage(
+        QFile(":/icons/fileopen.png").exists() ? "ICON FOUND" : "ICON NOT FOUND",
+        5000
+        );
+
+
     connect(ui->pushButton,
         &QPushButton::released,
         this,

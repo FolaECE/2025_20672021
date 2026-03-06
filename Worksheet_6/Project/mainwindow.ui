@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>800</width>
-    <height>288</height>
+    <width>816</width>
+    <height>225</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -67,7 +67,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>800</width>
+     <width>816</width>
      <height>22</height>
     </rect>
    </property>
@@ -81,20 +81,36 @@
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
   <widget class="QToolBar" name="toolBar">
+   <property name="enabled">
+    <bool>true</bool>
+   </property>
    <property name="windowTitle">
     <string>toolBar</string>
    </property>
+   <property name="movable">
+    <bool>true</bool>
+   </property>
+   <property name="toolButtonStyle">
+    <enum>Qt::ToolButtonStyle::ToolButtonIconOnly</enum>
+   </property>
+   <property name="floatable">
+    <bool>true</bool>
+   </property>
    <attribute name="toolBarArea">
-    <enum>BottomToolBarArea</enum>
+    <enum>TopToolBarArea</enum>
    </attribute>
    <attribute name="toolBarBreak">
     <bool>false</bool>
    </attribute>
+   <addaction name="actionOpen_File"/>
   </widget>
   <action name="actionOpen_File">
+   <property name="checkable">
+    <bool>false</bool>
+   </property>
    <property name="icon">
-    <iconset resource="Icons.qrc">
-     <normaloff>:/Icons/fileopen.png</normaloff>:/Icons/fileopen.png</iconset>
+    <iconset resource="icons.qrc">
+     <normaloff>:/Users/folaa/Downloads/fileopen.png</normaloff>:/Users/folaa/Downloads/fileopen.png</iconset>
    </property>
    <property name="text">
     <string>Open File</string>
@@ -102,13 +118,19 @@
    <property name="toolTip">
     <string>Open File</string>
    </property>
+   <property name="visible">
+    <bool>true</bool>
+   </property>
    <property name="menuRole">
     <enum>QAction::MenuRole::NoRole</enum>
+   </property>
+   <property name="iconVisibleInMenu">
+    <bool>true</bool>
    </property>
   </action>
  </widget>
  <resources>
-  <include location="Icons.qrc"/>
+  <include location="icons.qrc"/>
  </resources>
  <connections/>
 </ui>
