@@ -24,6 +24,7 @@ public:
 
 public slots:
     void handleButton();
+    void handleButton2();
 
 public slots:
     void handleTreeClicked();

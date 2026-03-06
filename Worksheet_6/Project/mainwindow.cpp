@@ -5,6 +5,7 @@
 #include <QIcon>
 #include <QFileDialog>
 #include <QFileInfo>
+#include "dialog.h"
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -17,13 +18,20 @@ MainWindow::MainWindow(QWidget *parent)
     ui->statusbar->showMessage(
         QFile(":/icons/fileopen.png").exists() ? "ICON FOUND" : "ICON NOT FOUND",
         5000
+
         );
+
 
 
     connect(ui->pushButton,
         &QPushButton::released,
         this,
-        &MainWindow::handleButton); 
+        &MainWindow::handleButton);
+
+    connect(ui->pushButton_2,
+            &QPushButton::released,
+            this,
+            &MainWindow::handleButton2);
 
     connect(ui->treeView, &QTreeView::clicked,
         this, &MainWindow::handleTreeClicked);
@@ -87,6 +95,26 @@ void MainWindow::handleTreeClicked()
 
 void MainWindow::handleButton() {
     emit statusUpdateMessage ( QString ("Add button was clicked"), 0);
+}
+void MainWindow::handleButton2()
+{
+    Dialog dialog(this);
+
+    if (dialog.exec() == QDialog::Accepted) {
+
+        bool visible = dialog.getVisible();
+
+        if (visible) {
+            QString name = dialog.getName();
+            emit statusUpdateMessage("Dialog accepted, Name: " + name, 0);
+        }
+        else {
+            emit statusUpdateMessage("Dialog accepted", 0);
+        }
+    }
+    else {
+        emit statusUpdateMessage("Dialog rejected", 0);
+    }
 }
 
 MainWindow::~MainWindow()

@@ -17,6 +17,7 @@ qt_add_executable(Project
     ModelPartList.cpp
     ModelPartList.h
     icons.qrc
+    dialog.h dialog.cpp dialog.ui
 
 
 
