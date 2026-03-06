@@ -3,6 +3,8 @@
 #include <QMessageBox>
 #include <QFile>
 #include <QIcon>
+#include <QFileDialog>
+#include <QFileInfo>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -57,7 +59,20 @@ MainWindow::MainWindow(QWidget *parent)
         }
     }
 }
+void MainWindow::on_actionOpen_File_triggered()
+{
+    QString fileName = QFileDialog::getOpenFileName(
+        this,
+        tr("Open File"),
+        "C:\\2025_20672021\\Worksheet_6\\Project",
+        tr("STL Files (*.stl);;Text Files (*.txt);;All Files (*.*)")
+    );
 
+    if (fileName.isEmpty())
+        return;
+
+    emit statusUpdateMessage("Selected file: " + fileName, 0);
+}
 void MainWindow::handleTreeClicked()
 {
     QModelIndex index = ui->treeView->currentIndex();
@@ -78,10 +93,5 @@ MainWindow::~MainWindow()
 {
     
     delete ui;
-}
-
-void MainWindow::on_actionOpen_File_triggered()
-{
-    emit statusUpdateMessage (QString ("Open File action triggered"), 0);
 }
 
